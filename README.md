@@ -1,2 +1,2 @@
 # portfolio
-things and stuff
+things and stuff, literally a portfolio
