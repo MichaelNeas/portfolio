@@ -2,7 +2,7 @@
 	box-sizing: border-box;
 }
 
-div {
+.button {
 	display: block;
 	height: 100%;
 	-webkit-animation: hue-rotate 10s linear infinite;
@@ -165,3 +165,124 @@ body {
 		filter: hue-rotate(360deg);
 	}
 }
+
+
+.circleNotification{
+	border: solid 3px blue;
+	background-color: green;
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	border-radius: 70px;
+	-webkit-animation-name: notification; /* Safari 4.0 - 8.0 */
+	-webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+	-webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+	animation-name: notification;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	-webkit-transition: width .35s ease-in-out; /* Safari 3.1 to 6.0 */
+	transition: width .35s ease-in-out;
+  }
+  
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes notification {
+	  0%   {border-color:blue; background-color:limegreen; left:0px; top:0px;}
+	  25%  {border-color:cyan; left:100px; top: 100px;}
+	  50%  {border-color:white; background-color:Aquamarine; left: 200px; top: 50px;}
+	  75%  {border-color:cyan; background-color:Chartreuse; left:50px; top: 150px}
+	  100% {border-color:blue; background-color:LightSeaGreen; top: 0px; left: 0px;}
+  }
+  
+  /* Standard syntax */
+  @keyframes notification {
+	 0%   {border-color:blue; background-color:limegreen; left:0px; top:0px;}
+	  25%  {border-color:cyan; left:100px; top: 100px;}
+	  50%  {border-color:white; background-color:Aquamarine; left: 200px; top: 50px;}
+	  75%  {border-color:cyan; background-color:Chartreuse; left:50px; top: 150px}
+	  100% {border-color:blue; background-color:LightSeaGreen; top: 0px; left: 0px;}
+  }
+
+
+  .container{
+	width: 100%;
+	position: relative;
+	height: 50vh;
+  }
+  
+  .left { 
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	-webkit-animation: xAxis 3s cubic-bezier(0.02, 0.01, 0.21, 1) forwards; /* Safari 4.0 - 8.0 */
+	animation: xAxis 3s cubic-bezier(0.02, 0.01, 0.21, 1) forwards;  
+  }
+  
+  .left::after {
+	width: 200px;
+	height: 200px;
+	background-image: url("../images/swift-og.png");
+	background-size: cover;
+	border-radius: 10px;
+	margin: 10px;
+	left: 30%;
+	content: '';
+	display: block;
+	-webkit-animation: yAxis 3s cubic-bezier(0.3, 0.27, 0.07, 1.64) forwards; /* Safari 4.0 - 8.0 */
+	animation: yAxis 3s cubic-bezier(0.3, 0.27, 0.07, 1.64) forwards;
+  }
+  
+  @keyframes xAxis {
+	100% {
+	  animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+	  left: 30%;
+	}
+  }
+  
+  @keyframes yAxis {
+	100% {
+	  animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+	  transform: translateY(150%);
+	}
+  }
+  
+  .right { 
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	-webkit-animation: rxAxis 3s cubic-bezier(0.02, 0.01, 0.21, 1) forwards; /* Safari 4.0 - 8.0 */
+	animation: rxAxis 3s cubic-bezier(0.02, 0.01, 0.21, 1) forwards;  
+  }
+  
+  .right::after {
+	width: 200px;
+	height: 200px;
+	background-image: url("../images/JavaScript-logo.png");
+	background-size: cover;
+	border-radius: 10px;
+	margin: 10px;
+	content: '';
+	display: block;
+	right: 30%;
+	-webkit-animation: ryAxis 3s cubic-bezier(0.3, 0.27, 0.07, 1.64) forwards; /* Safari 4.0 - 8.0 */
+	animation: ryAxis 3s cubic-bezier(0.3, 0.27, 0.07, 1.64) forwards;
+  }
+  
+  @keyframes rxAxis {
+	100% {
+	  animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+	  right: 30%;
+	}
+  }
+  
+  @keyframes ryAxis {
+	100% {
+	  animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+	  transform: translateY(150%);
+	}
+  }
+
+  @media all and (max-width: 1050px) {
+	  .left, .right {
+		  display: none;
+	  }
+  }
